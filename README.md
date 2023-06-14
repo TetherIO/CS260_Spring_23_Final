@@ -40,7 +40,9 @@ The code will compile and run, but the Maze functionality is currently lacking. 
 
 ## Analyzing Complexity
 
-### Complexity Analysis at time of submission was as follows: 
+A bit cursory as my Firefox tab crashed the first time after an hour of typing -- like an idiot I was editing the README directly in my browser without a backup.
+
+#####
 
 * GraphNode::addEdge O(1)
    - Constant time because we are just appending an end to end of array (vector)
@@ -48,14 +50,42 @@ The code will compile and run, but the Maze functionality is currently lacking. 
    - Again constant time as we're just accessing a member variable
 * GraphNode::getNeighbors O(1)
    - Another access which is a constant time operation
+
+#####
 * Graph::addEdge O(1)
    - Again constant as we're just adding an edge to a vector
 * Graph::getSize O(1)
    - Returning a size value, which is constant-time
 * Graph::minimumSpanningTree O(n log n)
-   - For this one, I'm guessing that sorting would dominate the complexity -- as it seems like the union-find operation is intuitively less intense, but I'd have to ask one of the research faculty I know for a real understanding. As we discussed in class, the sort requires that we sort
-* Graph::findShortestPath O(1)
-* Graph::kruskalMST O(N log N)   - Again, O(N log N) as the sort requires
+   - I'm guessing the sort is most time intensive. The sort requires considering n edges, and then the union operations consider each edge but the number of consideration decreases as as the tree grows.
+* Graph::findShortestPath O(n)
+   - This one is tricky, as I imagine it's dependent on both vertices and edges, but not the product of the two.
+* Graph::kruskalMST O(n log n)   
+   - Again, O(n log n) like the other kruskal implementation.
+* Graph::addNode O(1)
+   - assuming an insertion is constant time
+* Graph::getNode O(1)
+   - same reasoning as addNode
+* Graph::getEdges O(n)
+   - where n is the number of edgesb because adding all edges to set
+   - 
+#####
+* Maze() O(1)
+   - initiliazing n number of cells in a vector? maybe not considered
+* Maze::createMaze O(n)
+   - number of cells in maze looped
+* Maze::displayMaze O(n)
+   - by same thinking as createMaze, n number of cells
+* Maze::findShortestPath O(1n)
+   - again dependent on vertices and edges, would be O(n^2) if we found shortest path for every node to every other node
+* Maze::movePlayer O(1)
+   - bhecks and manipulates a couple variables
+* hasPlayerReacherdTarget O(1)
+   - a simple check if two pairs are equal
+* getWidth/Height O(1)
+   - these will likely be deleted by they are simple getters and thus constant
+* has(Top/Left/Right)Wall O(n)
+   - where n is number of edges, these three method iterate over all edges
 
 
 ## Considering two variations of an algorithm
