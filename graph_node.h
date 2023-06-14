@@ -4,10 +4,12 @@
 #include <string>
 #include <vector>
 
-#include "edge.h"
+struct edge;
 
 using std::string;
 using std::vector;
+
+class Graph;
 
 class GraphNode {
     public:
@@ -18,13 +20,14 @@ class GraphNode {
     void addEdge(GraphNode *destination, int weight);
     // get value of this node
     string getValue();
-    // get neighbors as a list of pointers
+    // get neighbors as a list of pointers ( might be better with my small graph to use copies of edge instead of pointers)
     vector<edge *> getNeighbors();
-
+    Graph *graph;
     private:
-    // stored value
+    //stored value
     string value;
 
     // reference to neighbors
     vector<edge *> neighbors;
+
 };
