@@ -3,16 +3,16 @@
 ## NOTE
 
 ### Fell Short
-As we chuckled about in class, sometimes even a simple maze project ends up being unexpectedly challenging. This was a brutal one for me that required quite a bit of head scratching and turning to past math textbooks to try and remember the different algorithms. It came down to a few years of experience, about 15 years ago, with programming in x86 assembly that hellped with pointers and understanding how programs are stored in memory. Regardless, I will need to contine to work on my C/C++ because it was clear how reliant I was on VSCode and CLION to essentially complete and format my code. I'm submitting this with what I believe show understanding of the topics and of the project's requirements -- but again, the original plan (see images below) was. I'll continue to work on this after my other finals tomorrow as I think I'm close to implementing a maze that displays on the commandline. 
+As we chuckled about in class, sometimes even a simple maze project ends up being unexpectedly challenging. This was a brutal one for me; it required quite a bit of head scratching and turning to past math textbooks to try and remember the algorithms. It came down to a few years of experience, about 15 years ago, with programming in x86 assembly that hellped with pointers and understanding how programs are stored in memory. Regardless, I will need to contine to work on my C/C++ because it was clear how reliant I was on VSCode and CLION to essentially complete and format my code. I'm submitting this with what I believe show understanding of the topics and of the project's requirements -- but again, the original plan (see images below) was. I'll continue to work on this after my other finals tomorrow as I think I'm close to implementing a maze that displays on the commandline. 
 
-### MUST-DO
+### IMMEDIATE ATTENTION
 * ~~Finish complexity analysis~~
-* Better comments explaining my process
+* Expand comments explaining my process (then screenshot into 
+* Replace BFS with Dijkstra's for ShortestPath
 
 
 ### IF TIME PERMITS
 * Use Prim's for createMaze to replace basic 'odd' method used as a placeholder
-* Replace BFS with Dijkstra's for ShortestPath
 * Delete edges in destructor of Graph(?)
 * Convert to undirected or detect all neighbors instead of 'one way' neighbor
 * Fix the maze print function
@@ -89,7 +89,7 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
    - where n is number of edges, these three method iterate over all edges
 
 
-## Considering two variations of an algorithm
+## More analysis: Kruskal's
 
 ### minimumSpanningTree
 * Gather up the edges in a vector (Kruskal considers all the edges vs Prim's which considers the edges that emanate from the current vertex.
