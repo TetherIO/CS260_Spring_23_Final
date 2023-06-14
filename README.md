@@ -11,7 +11,8 @@ As we chuckled about in class, sometimes even a simple maze project ends up bein
 
 
 ### IF TIME PERMITS
-* BFS algorithm to be replaced by Dijkstra's 
+* Use Prim's for createMaze to replace basic 'odd' method used as a placeholder
+* Replace BFS with Dijkstra's for ShortestPath
 * Delete edges in destructor of Graph(?)
 * Convert to undirected or detect all neighbors instead of 'one way' neighbor
 * Fix the maze print function
@@ -42,7 +43,7 @@ The code will compile and run, but the Maze functionality is currently lacking. 
 
 A bit cursory as my Firefox tab crashed the first time after an hour of typing -- like an idiot I was editing the README directly in my browser without a backup.
 
-#####
+##### GraphNode
 
 * GraphNode::addEdge O(1)
    - Constant time because we are just appending an end to end of array (vector)
@@ -51,7 +52,7 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
 * GraphNode::getNeighbors O(1)
    - Another access which is a constant time operation
 
-#####
+#####  Graph
 * Graph::addEdge O(1)
    - Again constant as we're just adding an edge to a vector
 * Graph::getSize O(1)
@@ -69,7 +70,7 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
 * Graph::getEdges O(n)
    - where n is the number of edgesb because adding all edges to set
    - 
-#####
+##### Maze
 * Maze() O(1)
    - initiliazing n number of cells in a vector? maybe not considered
 * Maze::createMaze O(n)
@@ -80,11 +81,11 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
    - again dependent on vertices and edges, would be O(n^2) if we found shortest path for every node to every other node
 * Maze::movePlayer O(1)
    - bhecks and manipulates a couple variables
-* hasPlayerReacherdTarget O(1)
+* Maze::hasPlayerReacherdTarget O(1)
    - a simple check if two pairs are equal
-* getWidth/Height O(1)
+* Maze::getWidth/Height O(1)
    - these will likely be deleted by they are simple getters and thus constant
-* has(Top/Left/Right)Wall O(n)
+* Maze::has(Top/Left/Right)Wall O(n)
    - where n is number of edges, these three method iterate over all edges
 
 
