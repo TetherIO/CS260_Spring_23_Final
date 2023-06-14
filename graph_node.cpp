@@ -1,4 +1,5 @@
 #include "graph_node.h"
+#include "edge.h"
 
 GraphNode::GraphNode(string newName) {
     value = newName;
@@ -6,9 +7,7 @@ GraphNode::GraphNode(string newName) {
 }
 
 GraphNode::~GraphNode() {
-    for(auto neighbor: neighbors) {
-        delete neighbor; // may cause issues modifying our collection object while accessing our collection object...
-    }
+    //delete class code based on some double deletions possibilities with my graph class
     neighbors.clear();
 }
 
