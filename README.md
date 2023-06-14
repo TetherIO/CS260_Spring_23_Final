@@ -6,7 +6,7 @@
 As we chuckled about in class, sometimes even a simple maze project ends up being unexpectedly challenging. This was a brutal one for me that required quite a bit of head scratching and turning to past math textbooks to try and remember the different algorithms. It came down to a few years of experience, about 15 years ago, with programming in x86 assembly that hellped with pointers and understanding how programs are stored in memory. Regardless, I will need to contine to work on my C/C++ because it was clear how reliant I was on VSCode and CLION to essentially complete and format my code. I'm submitting this with what I believe show understanding of the topics and of the project's requirements -- but again, the original plan (see images below) was. I'll continue to work on this after my other finals tomorrow as I think I'm close to implementing a maze that displays on the commandline. 
 
 ### MUST-DO
-* Finish complexity analysis
+* ~~Finish complexity analysis~~
 * Better comments explaining my process
 
 
