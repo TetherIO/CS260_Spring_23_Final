@@ -32,7 +32,7 @@ int main() {
     graph.addNode("D");
     graph.addNode("E");
     graph.addNode("F");
-    cout << "Graph size is: " << graph.getSize() << " (Expected: 6)\n";
+    cout <<"Graph size is: " << graph.getSize() << " (Expected: 6)\n";
     cout << "Adding a duplicate node 'A'...\n";
     try {
         graph.addNode("A");
@@ -44,7 +44,7 @@ int main() {
 
     // Test addEdge
     cout << "=== Testing addEdge ===\n";
-    cout << "Adding edges A->B, B->C, C->A, D->E with weights 1, 2, 3, 4.\n";
+    cout << "Adding edges A->B, B-> C, C->A, D->E with weights 1, 2, 3, 4.\n";
     graph.addEdge("A", "B", 1);
     graph.addEdge("B", "C", 2);
     graph.addEdge("C", "A", 3);
@@ -59,7 +59,7 @@ int main() {
     } catch (const std::runtime_error& e) {
         cout << "Caught exception: " << e.what() << "\n";
     }
-    cout << "Adding an edge with a non-existent destination node...\n";
+    cout << "Adding an edge with a nonexistent destnation node...\n";
     try {
         graph.addEdge("B", "Y", 5);
     } catch (const std::runtime_error& e) {
@@ -71,7 +71,7 @@ int main() {
     cout << "=== Testing findShortestPath ===\n";
     cout << "Finding shortest path from A to C.\n";
     vector<string> path = graph.findShortestPath("A", "C");
-    cout << "Shortest path from A to C is: ";
+    cout << "shortest path from A to C is:";
     for (const auto &p : path) {
         cout << p << " ";
     }
@@ -83,7 +83,7 @@ int main() {
         cout << p << " ";
     }
     cout << "(Expected: B C A D)\n";
-    cout << "Finding shortest path from A to E (no path exists)...\n";
+    cout << "Finding shortest path from a to E (no path exists)...\n";
     vector<string> invalidPath = graph.findShortestPath("A", "E");
     if (invalidPath.empty()) {
         cout << "No path exists from A to E.\n";
