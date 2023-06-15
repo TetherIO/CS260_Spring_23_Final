@@ -11,9 +11,10 @@ GraphNode::~GraphNode() {
     neighbors.clear();
 }
 
+// adds an edge to the current node
 void GraphNode::addEdge(GraphNode *destination, int weight) {
-    edge *newEdge = new edge{this, destination, weight};
-    neighbors.push_back(newEdge);
+    edge *newEdge = new edge{this, destination, weight}; 
+    neighbors.push_back(newEdge); // adds edge created above to the neighbors
 }
 
 string GraphNode::getValue() {
