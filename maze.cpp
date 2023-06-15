@@ -6,10 +6,14 @@
 Maze::Maze(int width, int height) {
     this->width = width;
     this->height = height;
+    // initializing all spaces as closed (false) at first
     openSpaces = std::vector<std::vector<bool>>(height, std::vector<bool>(width, false));
     mazeGraph = new Graph(width, height);
+    // create the maze right in the constructor
     createMaze(width,height);
+    // player starts at the top-left corner (0, 0) -- might revise this method of setting up the maze if time permits
     playerPosition = std::make_pair(0, 0);
+    // target is at the bottom-right corner (width - 1, height - 1)
     targetPosition = std::make_pair(width - 1, height - 1);
 
 }
@@ -18,9 +22,12 @@ Maze::Maze(int width, int height) {
 void Maze::createMaze(int creation_width, int creation_height) {
     // initialize all nodes and mark odd-numbered indices as open spaces for test
 
+     // iterate over all cells in the grid
     for (int i = 0; i < creation_width; i++) {
         for (int j = 0; j < creation_height; j++) {
+            // open space if both coordinates are odd (for testing purposes)
             openSpaces[j][i] = (i % 2 == 1 && j % 2 == 1);
+            // if it's an open space, add a node to the graph
             if (openSpaces[j][i]) {
                 mazeGraph->addNode(std::to_string(i) + "," + std::to_string(j));
             }
