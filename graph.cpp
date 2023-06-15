@@ -12,9 +12,10 @@ struct QueueNode {
     vector<string> path;
 };
 
+// constructor initilizes a certain size maze (should have probably just gone with fixed size for this project)
 Graph::Graph(int width, int height) : width(width), height(height) {}
 
-
+// destructor to clear graph up
 Graph::~Graph() {
     for (auto node: nodes) {
         delete node;
@@ -23,8 +24,7 @@ Graph::~Graph() {
 }
 
 
-// Take a source name and destination name and create an edge if those names have corresponding nodes, do not create if either end is nullptr.
-
+// creates the edge if the two nodes exist
 void Graph::addEdge(string sourceName, string destinationName, int weight) {
     GraphNode *sourceNode = nodeMap[sourceName];
     GraphNode *destinationNode = nodeMap[destinationName];
@@ -45,6 +45,7 @@ int Graph::getSize() {
     return nodes.size();
 }
 
+// MST, Kruskal's algorithm implementation
 string Graph::minimumSpanningTree() {
     vector<edge *> allEdges;
     vector<edge *> MST;
@@ -78,6 +79,7 @@ string Graph::minimumSpanningTree() {
         }
     }
 
+    // constructs the output string of the MST (in this version I orginally passed by string instead of vector of edges)
     string output = "";
     for (auto edge: MST) {
         output += edge->source->getValue() + " -> " + edge->destination->getValue() + "\n";
@@ -86,7 +88,7 @@ string Graph::minimumSpanningTree() {
     return output;
 }
 
-// Helper function to find the root of a node (for the union-find structure)
+// helper function to find the root of a node (for the union-find structure)
 string Graph::findRoot(std::map<string, string> &parent, string node) {
     if (parent[node] == node) {
         return node;
@@ -95,7 +97,7 @@ string Graph::findRoot(std::map<string, string> &parent, string node) {
 }
 
 
-
+// BFS to be replaced by more technical algorithm to find distance to every tile from every tile of the 'maze' graph
 vector<string> Graph::findShortestPath(string sourceName, string destinationName) {
     // The BFS algorithm uses a queue, so we'll create one to hold nodes to visit
     std::queue<QueueNode> toVisit;
@@ -108,7 +110,7 @@ vector<string> Graph::findShortestPath(string sourceName, string destinationName
     toVisit.push(sourceNode);
 
     while (!toVisit.empty()) {
-        // Get the next node to visit from the front of the queue
+        // get the next node to visit from the front of the queue
         QueueNode currentNode = toVisit.front();
         toVisit.pop();
 
@@ -132,7 +134,7 @@ vector<string> Graph::findShortestPath(string sourceName, string destinationName
         }
     }
 
-    // If we've gotten here, there's no path from source to destination
+    //return empty path if no path is found
     return {};
 }
 
@@ -183,14 +185,14 @@ int Graph::getHeight() const {
     return height;
 }
 
-
+// add a node to the graph
 void Graph::addNode(const string& nodeName) {
     // Check if the node already exists
     if (nodeMap.find(nodeName) != nodeMap.end()) {
         throw std::runtime_error("Node already exists");
     }
 
-    // Create new node
+    // create a new node and add it to the graph's node list and map
     GraphNode* newNode = new GraphNode(nodeName);
     newNode->graph = this;  // Set the graph pointer
 
