@@ -1,17 +1,18 @@
 # CS260_Spring_23_Final
 
-## NOTE
+## The state of things...
 
-### Fell Short
+### Where my ambitions fell short
 As we chuckled about in class, sometimes even a simple maze project ends up being unexpectedly challenging. This was a brutal one for me; it required quite a bit of head scratching and turning to past math textbooks to try and remember the algorithms. It came down to a few years of experience, about 15 years ago, with programming in x86 assembly that hellped with pointers and understanding how programs are stored in memory. Regardless, I will need to contine to work on my C/C++ because it was clear how reliant I was on VSCode and CLION to essentially complete and format my code. I'm submitting this with what I believe show understanding of the topics and of the project's requirements -- but again, the original plan (see images below) was. I'll continue to work on this after my other finals tomorrow as I think I'm close to implementing a maze that displays on the commandline. 
 
 ### IMMEDIATE ATTENTION
 * ~~Finish complexity analysis~~
-* Expand comments explaining my process (then screenshot into 
-* Replace BFS with Dijkstra's for ShortestPath
+* ~~Expand comments explaining my process (then screenshot into~~
+
 
 
 ### IF TIME PERMITS
+* Replace BFS with Dijkstra's for ShortestPath
 * Use Prim's for createMaze to replace basic 'odd' method used as a placeholder
 * Delete edges in destructor of Graph(?)
 * Convert to undirected or detect all neighbors instead of 'one way' neighbor
