@@ -87,6 +87,21 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
    - these will likely be deleted by they are simple getters and thus constant
 * Maze::has(Top/Left/Right)Wall O(n)
    - where n is number of edges, these three method iterate over all edges
+ 
+
+## Required functions
+
+### A function to add a new vertex to the graph
+![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/addVertexRequirment.png)
+
+### A function to add a new edge between two vertices of the graph
+![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/addEdgeRequirment.png)
+
+### A function for a shortest path algorithm
+![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/addFindShortestPathRequirment.png)
+
+### A function for a minimum spanning tree algorithm
+
 
 
 ## More analysis: Kruskal's
@@ -103,6 +118,7 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
 * Iterating over sorted edges and checking for cycles as above. The difference is in the union operation; in kruskalMST the parent of the root of the destionation is set to the root of the source. The minimumSpanningTree has the parent of the root of the source set to the root of the destionation. That said, in both, roots are checked to prevent cycles and  operations performed by updating the parent of the destination vertex's root to the source vertex's root.
 
 As can be seen in the code, there's not much difference between the two. The first was more reliant on inspiration from outside sources and the second was more independent from the experience of creating the first and from the discrete math series I thook for my undergrad degree. As far as returned structures, the vector of edges made sense in the context of updating a gameboard to be displayed. The formatted string from minimalSpanningTree seemed good for debugging or a text based game, for example. 
+
 
 
 
