@@ -1,17 +1,23 @@
 # CS260_Spring_23_Final
 
-## The state of things...
+## Introduction
 
-### Where my ambitions fell short
-As we chuckled about in class, sometimes even a simple maze project ends up being unexpectedly challenging. This was a brutal one for me; it required quite a bit of head scratching and turning to past math textbooks to try and remember the algorithms. It came down to a few years of experience, about 15 years ago, with programming in x86 assembly that hellped with pointers and understanding how programs are stored in memory. Regardless, I will need to contine to work on my C/C++ because it was clear how reliant I was on VSCode and CLION to essentially complete and format my code. I'm submitting this with what I believe show understanding of the topics and of the project's requirements -- but again, the original plan (see images below) was. I'll continue to work on this after my other finals tomorrow as I think I'm close to implementing a maze that displays on the commandline. 
+This code represents an implementation of a graph data structure in C++, the language of choice for our class. The graph is built using GraphNode and Graph (classes) and can support various operation like adding nodes, edges, and determining shortest path between two nodes. This code implements two versions of Kruskal's algorigthm for finding minimum spanning trees. Lovers of set theory and graphy theory will rejoice at the fine display of discrete operation. An attempt to store graph nodes in a map was made, and the methods were created in create node to consider edges and their neighbors. Outside of the scope of the class, but within scope of the basics of C++, I played around with basic exception handling and loops in the "main" driver file.
 
-### IMMEDIATE ATTENTION
+The code will compile and run, but the Maze functionality is currently lacking. Fitting the minimum requirements, my addNode function in the Graph class adds a vertex to the graph; likewise my addEdge function adds an edge between two nodes; the shortest path again used a very simple BFS algorithm (and likely will add a second after the deadline); and there are two MST implementations that are slightly different in output using kruskal's algorithm. The MST used by the maze is given by minimumSpanningTree(), but I was able to create the kruskalMST with just a couple discrete math books and minimal reference code from Tony Gaddis and StackExachange.
+
+
+
+### The state of things...
+As we chuckled about in class, sometimes even a simple maze project ends up being unexpectedly challenging. This was a brutal one for me; it required quite a bit of head scratching and turning to past math textbooks to try and remember the algorithms. It came down to a few years of experience, about 15 years ago, with programming in x86 assembly that hellped with pointers and understanding how programs are stored in memory. Regardless, I will need to contine to work on my C/C++ because it was clear how reliant I was on VSCode and CLION to essentially complete and format my code. I'm submitting this with what I believe show understanding of the topics and of the project's requirements -- but again, the original plan (see images below) was a bit more involved. I'll continue to work on this after my other finals tomorrow as I think I'm close to implementing a maze that displays on the commandline. 
+
+#### IMMEDIATE ATTENTION
 * ~~Finish complexity analysis~~
 * ~~Expand comments explaining my process (then screenshot into~~
 
 
 
-### IF TIME PERMITS
+#### IF TIME PERMITS
 * Replace BFS with Dijkstra's for ShortestPath
 * Use Prim's for createMaze to replace basic 'odd' method used as a placeholder
 * Delete edges in destructor of Graph(?)
@@ -22,7 +28,7 @@ As we chuckled about in class, sometimes even a simple maze project ends up bein
 
 
 
-### BACKBURNER
+#### BACKBURNER
 * Create edges in either (exclusive) Graph or Node
 * Implement my other kruskal's in the maze class (fix cycle issue)
 * addEdge exception handling for sourceNode/destinationNode not found in nodeMap (getNode too)
@@ -34,11 +40,6 @@ As we chuckled about in class, sometimes even a simple maze project ends up bein
 * check if destination is null pointer in addEdge before dereferencing (?)
 * delete graph class members "width" and "height" (are they being used somewhere that I'm not noticing?)
 * addEdge checking for existing edge(?)
-
-
-
-## Introduction
-The code will compile and run, but the Maze functionality is currently lacking. Fitting the minimum requirements, my addNode function in the Graph class adds a vertex to the graph; likewise my addEdge function adds an edge between two nodes; the shortest path again used a very simple BFS algorithm (and likely will add a second after the deadline); and there are two MST implementations that are slightly different in output using kruskal's algorithm. The MST used by the maze is given by minimumSpanningTree(), but I was able to create the kruskalMST with just a couple discrete math books and minimal reference code from Tony Gaddis and StackExachange.
 
 ## Analyzing Complexity
 
