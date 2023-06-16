@@ -146,10 +146,13 @@ GraphNode *Graph::getNode(string name) {
 
 // alternate MST implementation using kruskal vs prim
 vector<edge> Graph::kruskalMST() {
+
+    // I had to look up how to implement a lambda type function in c++ but it made sense
     sort(allEdges.begin(), allEdges.end(), [](const edge &a, const edge &b) {
         return a.weight < b.weight;
     });
 
+    // each node is its own disjoint set when it's node is its own parent (for some reason that made me think of Tom Arnold signing I'm my own grandpa in the 90s classic, the stoopids)
     map<GraphNode*, GraphNode*> parents;
     for (GraphNode* node : nodes) {
         parents[node] = node;
@@ -157,23 +160,27 @@ vector<edge> Graph::kruskalMST() {
 
     vector<edge> mst;
 
+    // we iterate over the sorted edges, and we necessarily 'process' the smallest edge weight first
     for (edge &edge : allEdges) {
         GraphNode* sourceParent = parents[edge.source];
         while (sourceParent != parents[sourceParent]) {
             sourceParent = parents[sourceParent];
         }
 
+        // hey timmy, did you conceive yourself? -- don't give me that look, by the way I have a question for your parent
         GraphNode* destParent = parents[edge.destination];
         while (destParent != parents[destParent]) {
             destParent = parents[destParent];
         }
 
+        // hey, your that immaculate conception self-birth guy! join the congo line!
         if (sourceParent != destParent) {
             mst.push_back(edge);
             parents[destParent] = sourceParent;
         }
     }
 
+    // the whole gang is comming back with us!
     return mst;
 }
 
