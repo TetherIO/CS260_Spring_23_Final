@@ -102,17 +102,17 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
 
 ### A function for a minimum spanning tree algorithm
 
+#### minimumSpanningTree
+![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/minimalSpanningTreeRequirment.png)
 
-
-## More analysis: Kruskal's
-
-### minimumSpanningTree
 * Gather up the edges in a vector (Kruskal considers all the edges vs Prim's which considers the edges that emanate from the current vertex.
 * Sort all of those edges by their weight in ascending order.
 * Create a map for the parent of each node ultilizing a disjoint-set structure (Union-Find). This allows us to track which vertices are in which connected components to prevent the cycles when edges are added (smallest edge considered so cycles are very possible).
 * Iterating over sorted edges and checking for Cycles as hinted to above. I use findRoot() to check if vertices are in "set", if not the edge is added and merges the constitutent vertices of the component.
 
-### kruskalMST
+#### kruskalMST
+![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/kruskalMSTRequirment.png)
+
 * Sorts all edges in a similiar manner (as is the hallmark of Kruskal's)
 * Same use of disjoint-set (union-find); each node is own parent initially, etc.
 * Iterating over sorted edges and checking for cycles as above. The difference is in the union operation; in kruskalMST the parent of the root of the destionation is set to the root of the source. The minimumSpanningTree has the parent of the root of the source set to the root of the destionation. That said, in both, roots are checked to prevent cycles and  operations performed by updating the parent of the destination vertex's root to the source vertex's root.
@@ -120,9 +120,12 @@ A bit cursory as my Firefox tab crashed the first time after an hour of typing -
 As can be seen in the code, there's not much difference between the two. The first was more reliant on inspiration from outside sources and the second was more independent from the experience of creating the first and from the discrete math series I thook for my undergrad degree. As far as returned structures, the vector of edges made sense in the context of updating a gameboard to be displayed. The formatted string from minimalSpanningTree seemed good for debugging or a text based game, for example. 
 
 
-
-
+## Original plan and testing ideas
+####
 ![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/Data%20Structures-2.jpg?raw=true)
+####
 ![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/Data%20Structures-3.jpg?raw=true)
+####
 ![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/Data%20Structures-4.jpg?raw=true)
+####
 ![](https://github.com/TetherIO/CS260_Spring_23_Final/blob/main/Data%20Structures-5.jpg?raw=true)
