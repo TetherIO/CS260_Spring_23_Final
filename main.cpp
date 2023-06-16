@@ -54,6 +54,8 @@ int main() {
     cout << "Graph edges count for node C: " << graph.getNode("C")->getNeighbors().size() << " (Expected: 1)\n";
     cout << "Graph edges count for node D: " << graph.getNode("D")->getNeighbors().size() << " (Expected: 1)\n";
     cout << "Adding an edge with a non-existent source node...\n";
+
+    // probably spent a little too much time playing around with exception handling
     try {
         graph.addEdge("X", "B", 5);
     } catch (const std::runtime_error& e) {
@@ -102,8 +104,9 @@ int main() {
     cout << "Finding minimum spanning tree using Kruskal's algorithm.\n";
     vector<edge> mstEdges = graph.kruskalMST();
     cout << "Minimum spanning tree edges are: \n";
+    // simple range based loop
     for (const auto &e : mstEdges) {
-        cout << e.source->getValue() << " -> " << e.destination->getValue() << "\n";
+        cout << e.source->getValue() << " -> " << e.destination->getValue() << "\n"; // prints the value of the source/destination nodes of each edge
     }
     cout << "\n";
 
